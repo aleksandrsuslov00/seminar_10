@@ -1,5 +1,7 @@
 import text
 
+from model import PhoneBook
+
 def main_menu():
     print(text.main_menu[0])
     for i in range(len(text.main_menu)):
@@ -22,10 +24,11 @@ def show_contacts(book: dict, msg: str):
         max_size = [max(field) for field in zip(*lens)]
         print('\n' + '=' * (sum(max_size) + 6))
         for u_id, contact in book.items():
-            contact = contact.to_list()
+            contact = contact.to_list()    
             contact = ' '.join([f'{contact[i]:<{max_size[i]}}' for i in range(len(contact))])
             print(f'{u_id:>3}{contact}') 
         print('=' * (sum(max_size) + 6) + '\n')    
+        
     else: 
         print_msg(msg)
 

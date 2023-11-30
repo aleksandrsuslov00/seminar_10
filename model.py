@@ -27,6 +27,9 @@ class Contact:
 
     def len_fields(self) -> tuple[int, int, int]:
         return len(self.name), len(self.phone), len(self.comment)    
+    
+    def to_list(self):
+        return [self.name, self.phone, self.comment]
 
 class PhoneBook:
     def __init__(self, path: str = 'phone_book.txt'):
